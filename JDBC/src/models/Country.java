@@ -10,7 +10,16 @@ public class Country {
 
     public Country(){
     }
-    
+
+    public Country(String id) {
+        this.id = id;
+    }
+
+    public Country(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Country(String id, String name, int region) {
         this.id = id;
         this.name = name;
