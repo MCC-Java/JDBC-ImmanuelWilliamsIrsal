@@ -34,11 +34,8 @@ public class Testing {
 //        insert a country
         System.out.println(countryController.save("JP", "Japan", "2"));
 
-//        update name of a country
+//        update a country
 //        System.out.println(countryController.editName("KR", "South Korea", "2"));
-
-//        update region of a country
-//        System.out.println(countryController.editRegion("KR", "South Korea", "2"));
 
 //        delete a country
         System.out.println(countryController.delete("JP"));
