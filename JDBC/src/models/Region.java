@@ -10,6 +10,14 @@ public class Region {
 
     public Region(){
     }
+
+    public Region(int id) {
+        this.id = id;
+    }
+
+    public Region(String name) {
+        this.name = name;
+    }
     
     public Region(int id, String name) {
         this.id = id;

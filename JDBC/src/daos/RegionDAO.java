@@ -3,6 +3,7 @@ package daos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import models.Region;
@@ -39,5 +40,67 @@ public class RegionDAO {
         } catch (Exception e) {
         }
         return regions;
+    }
+    
+    /**
+     *  Inserting new data into Region
+     * @param region Id and Name
+     * @return True if correct and vice versa.
+     */
+    
+    public boolean insert(Region region){
+        boolean result = false;
+        String query = "INSERT INTO region VALUES (?, ?)";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, region.getId());
+            statement.setString(2, region.getName());
+            statement.executeUpdate();
+            result = true;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+    /**
+     *  Updating a data from Region
+     * @param region Id and Name
+     * @return True if correct and vice versa.
+     */
+    
+    public boolean update(Region region){
+        boolean result = false;
+        String query = "UPDATE region SET name = ? WHERE id = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, region.getName());            
+            statement.setInt(2, region.getId());
+            statement.executeUpdate();
+            result = true;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+    /**
+     *  Delete a data from Region
+     * @param region Id
+     * @return True if correct and vice versa.
+     */
+    
+    public boolean delete(Region region){
+        boolean result = false;
+        String query = "DELETE FROM region WHERE id = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, region.getId());
+            statement.executeUpdate();
+            result = true;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 }

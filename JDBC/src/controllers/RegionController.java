@@ -33,5 +33,30 @@ public class RegionController {
 //        return this.rdao.getRegions();
     }
     
+    public String save(String id, String name){
+        String result = "Simpan data gagal";
+//        use this if id is not setted auto increment.
+//        int regionId = Integer.parseInt(id);
+//        Region region = new Region(regionId, name);
+
+        Region region = new Region(name);
+        if (this.rdao.insert(region)) result = "Simpan data berhasil";
+        return result;
+    }
     
+    public String edit(String id, String name){
+        String result = "Simpan data gagal";
+        int regionId = Integer.parseInt(id);
+        Region region = new Region(regionId,name);
+        if (this.rdao.update(region)) result = "Simpan data berhasil";
+        return result;
+    }
+    
+    public String delete(String id){
+        String result = "Hapus data gagal";
+        int regionId = Integer.parseInt(id);
+        Region region = new Region(regionId);
+        if (this.rdao.delete(region)) result = "Hapus data berhasil";
+        return result;
+    }
 }
