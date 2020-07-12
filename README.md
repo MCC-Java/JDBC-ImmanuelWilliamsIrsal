@@ -5,7 +5,7 @@
 <summary>
 <b>🎆 Gallery - Click to expand</b><br>
 </summary>
-<img src="./JDBC/JDBC-Screenshots/home.png" width="393" height="473"/>
+<img src="./JDBC/JDBC-Screenshots/country.png" width="393" height="473"/>
 <img src="./JDBC/JDBC-Screenshots/region.png" width="393" height="473"/>
 </details>
 <details>
