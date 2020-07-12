@@ -43,7 +43,7 @@ public class MainView extends javax.swing.JFrame {
         );
         DskMainLayout.setVerticalGroup(
             DskMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 539, Short.MAX_VALUE)
+            .addGap(0, 549, Short.MAX_VALUE)
         );
 
         form.setText("Form");
@@ -57,6 +57,11 @@ public class MainView extends javax.swing.JFrame {
         form.add(menuRegion);
 
         menuCountry.setText("Country");
+        menuCountry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCountryActionPerformed(evt);
+            }
+        });
         form.add(menuCountry);
 
         jMenuBar1.add(form);
@@ -82,6 +87,12 @@ public class MainView extends javax.swing.JFrame {
         regionView.show();
         DskMain.add(regionView);
     }//GEN-LAST:event_menuRegionActionPerformed
+
+    private void menuCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCountryActionPerformed
+        CountryView countryView = new CountryView();
+        countryView.show();
+        DskMain.add(countryView);
+    }//GEN-LAST:event_menuCountryActionPerformed
 
     /**
      * @param args the command line arguments

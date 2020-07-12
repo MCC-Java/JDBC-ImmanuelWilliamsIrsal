@@ -3,7 +3,7 @@ package tools;
 import controllers.CountryController;
 import controllers.RegionController;
 import java.util.List;
-import models.Region;
+import models.Country;
 
 /**
  *
@@ -37,10 +37,19 @@ public class Testing {
 //            System.out.println("ID: "+region.getId()+", Name: "+region.getName());
 //        }
 
-        Region region = regionController.getById("2");
-        System.out.println("ID: "+region.getId()+", Name: "+region.getName());
+//        Region region = regionController.getById("2");
+//        System.out.println("ID: "+region.getId()+", Name: "+region.getName());
             
 
+//        search a country
+//        List<Country> countriesList = countryController.search("a");
+//        for (Country country : countriesList) {
+//            System.out.println("ID: "+country.getId()+", Name: "+country.getName()+", Region: "+country.getRegion());
+//        }
+
+//        Country country = countryController.getById("UK");
+//        System.out.println("ID: "+country.getId()+", Name: "+country.getName()+", Region: "+country.getRegion());
+        
 //        insert a country
 //        System.out.println(countryController.save("JP", "Japan", "2"));
 
