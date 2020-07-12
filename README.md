@@ -4,8 +4,8 @@
 <summary>
 <b>🎆 Gallery</b>
 </summary>
-<img src="./jdbc/JDBC-Screenshots/home.png">
-<img src="./jdbc/JDBC-Screenshots/region.png">
+<img src="./JDBC/JDBC-Screenshots/home.png" width="393" height="473"/>
+<img src="./JDBC/JDBC-Screenshots/region.png" width="393" height="473"/>
 <details>
 <summary>
 <b>🚀 Features</b>
