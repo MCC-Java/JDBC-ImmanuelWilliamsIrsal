@@ -34,6 +34,19 @@ public class RegionController {
     }
     
     /**
+     * Search function
+     * @param keyword
+     * @return list
+     */
+    public List<Region> search(String keyword) {
+        return this.rdao.search(keyword);
+    }
+    
+    public Region getById (String id) {
+        return this.rdao.getById(Integer.parseInt(id));
+    }
+    
+    /**
      * Adding a new region
      * @param id 
      * @param name

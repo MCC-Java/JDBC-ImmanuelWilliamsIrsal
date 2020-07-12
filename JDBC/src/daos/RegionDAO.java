@@ -103,4 +103,39 @@ public class RegionDAO {
         }
         return result;
     }
+    
+    public Region getById(int id) {
+        Region region = null;
+        String query = "SELECT * FROM region WHERE id = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()) {
+                region = new Region(resultSet.getInt(1), resultSet.getString(2));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return region;
+    }
+    
+    public List<Region> search (String keyword) {
+        List<Region> regions = new ArrayList<>();
+//        String query = "SELECT * FROM region WHERE id LIKE '%"+keyword+"%' OR name LIKE '%"+keyword+"%'";
+        String query = "SELECT * FROM region WHERE id LIKE ? OR name LIKE ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, "%"+keyword+"%");
+            statement.setString(2, "%"+keyword+"%");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Region region = new Region(resultSet.getInt(1), resultSet.getString("name"));
+                regions.add(region);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return regions;
+    }
 }
