@@ -37,7 +37,8 @@ public class RegionDAO {
                 region.setName(resultSet.getString(2));
                 regions.add(region);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
         return regions;
     }
