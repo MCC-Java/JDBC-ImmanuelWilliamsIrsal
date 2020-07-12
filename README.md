@@ -1,14 +1,16 @@
 <h1 align="center">MCCOC - Valorant Regions and Countries</h1>
 <p align="center">An app to show Regions and Countries available in Valorant.</p>
 
+<details>
 <summary>
-<b>🎆 Gallery</b>
+<b>🎆 Gallery - Click to expand</b><br>
 </summary>
 <img src="./JDBC/JDBC-Screenshots/home.png" width="393" height="473"/>
 <img src="./JDBC/JDBC-Screenshots/region.png" width="393" height="473"/>
+</details>
 <details>
 <summary>
-<b>🚀 Features</b>
+<b>🚀 Features - Click to expand</b>
 </summary>
 
 - [x] Show all regions available in Valorant
