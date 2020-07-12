@@ -6,14 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import models.Country;
+import models.Region;
 import tools.Koneksi;
 
 /**
  *
- * @author ASUS-PC
+ * @author ASUS-PC BigBoss
  */
 public class CountryDAO {
     private Connection connection = null;
@@ -101,4 +100,39 @@ public class CountryDAO {
         }
         return result;
     }
+    
+    public Country getById(String id) {
+        Country country = null;
+        String query = "SELECT * FROM country WHERE id = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()) {
+                country = new Country(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return country;
+    }
+    
+    public List<Country> search (String keyword) {
+        List<Country> countries = new ArrayList<>();
+        String query = "SELECT * FROM country WHERE id LIKE ? OR name LIKE ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, "%"+keyword+"%");
+            statement.setString(2, "%"+keyword+"%");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Country country = new Country(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3));
+                countries.add(country);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return countries;
+    }
+    
 } 

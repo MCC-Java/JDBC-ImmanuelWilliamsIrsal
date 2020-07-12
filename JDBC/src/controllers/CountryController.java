@@ -73,5 +73,11 @@ public class CountryController {
         return result;
     }
     
+    public List<Country> search(String keyword) {
+        return this.cdao.search(keyword);
+    }
     
+    public Country getById (String id) {
+        return this.cdao.getById(id);
+    }
 }
